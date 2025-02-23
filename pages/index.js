@@ -1,5 +1,27 @@
 import React from "react";
-import "../styles/global.css"; // Sørg for at CSS-en er importert
+
+const rabatter = {
+  "Klær": {
+    "Gensere": [
+      { id: 1, butikk: "NLY Man", rabatt: "10%", link: "https://nlyman.com" },
+      { id: 2, butikk: "Zalando", rabatt: "15%", link: "https://zalando.no" }
+    ],
+    "Bukser": [
+      { id: 3, butikk: "H&M", rabatt: "20%", link: "https://hm.com" },
+      { id: 4, butikk: "Asos", rabatt: "25%", link: "https://asos.com" }
+    ]
+  },
+  "Sko": {
+    "Sneakers": [
+      { id: 5, butikk: "Nike", rabatt: "30%", link: "https://nike.com" },
+      { id: 6, butikk: "Adidas", rabatt: "15%", link: "https://adidas.no" }
+    ],
+    "Boots": [
+      { id: 7, butikk: "Timberland", rabatt: "10%", link: "https://timberland.com" },
+      { id: 8, butikk: "Ecco", rabatt: "20%", link: "https://ecco.com" }
+    ]
+  }
+};
 
 export default function Home() {
   return (
@@ -7,51 +29,26 @@ export default function Home() {
       <h1>Velkommen til XpressStyle!</h1>
       <p>Her finner du de beste rabattkodene akkurat nå.</p>
 
-      {/* Hovedkategori: Klær */}
-      <div className="category">
-        <h2>👕 Klær</h2>
+      {Object.keys(rabatter).map((kategori) => (
+        <div key={kategori} className="category">
+          <h2>{kategori}</h2>
 
-        {/* Underkategori: Gensere */}
-        <div className="subcategory">
-          <h3>Gensere</h3>
-          <ul>
-            <li>
-              <a href="https://nlyman.com" target="_blank">
-                NLY Man - <span className="discount">10% rabatt</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://fernerjacobsen.no" target="_blank">
-                Ferner Jacobsen - <span className="discount">20% rabatt</span>
-              </a>
-            </li>
-          </ul>
+          {Object.keys(rabatter[kategori]).map((underkategori) => (
+            <div key={underkategori} className="subcategory">
+              <h3>{underkategori}</h3>
+              <ul className="rabatt-liste">
+                {rabatter[kategori][underkategori].map((rabatt) => (
+                  <li key={rabatt.id}>
+                    <a href={rabatt.link} target="_blank" rel="noopener noreferrer">
+                      {rabatt.butikk} - <strong>{rabatt.rabatt} rabatt</strong>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-
-        {/* Underkategori: Bukser */}
-        <div className="subcategory">
-          <h3>Bukser</h3>
-          <ul>
-            <li>
-              <a href="https://careofcarl.no" target="_blank">
-                Care of Carl - <span className="discount">15% rabatt</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Underkategori: T-skjorter */}
-        <div className="subcategory">
-          <h3>T-skjorter</h3>
-          <ul>
-            <li>
-              <a href="https://nlyman.com" target="_blank">
-                NLY Man - <span className="discount">10% rabatt</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
