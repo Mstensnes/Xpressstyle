@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #f0f2f5;
   color: #333;
   text-align: center;
   padding: 20px;
@@ -8,20 +8,39 @@ body {
 
 h1 {
   color: #1a73e8;
+  font-size: 28px;
 }
 
-ul {
-  list-style: none;
+p {
+  font-size: 18px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.category {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.rabatt-liste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
 }
 
-li {
+.rabatt-item {
   background: white;
-  padding: 10px;
-  margin: 10px auto;
+  padding: 15px;
+  margin: 10px;
   width: 300px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 a {
@@ -29,3 +48,4 @@ a {
   color: #1a73e8;
   font-weight: bold;
 }
+
