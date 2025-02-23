@@ -15,34 +15,44 @@ h2 {
   font-size: 24px;
   color: #333;
   margin-top: 30px;
+  scroll-margin-top: 80px; /* Hindrer at overskriftene klippes av */
 }
 
 p {
   font-size: 18px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-ul {
+/* Navigasjonslenker */
+.nav-links {
+  list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-a {
+.nav-links a {
   text-decoration: none;
-  color: #1a73e8;
   font-weight: bold;
+  color: #1a73e8;
 }
 
-a:hover {
+.nav-links a:hover {
   text-decoration: underline;
 }
+
+/* Kategori-seksjon */
+.kategori-seksjon {
+  margin-top: 50px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: 60%;
+}
+
 
 
 
