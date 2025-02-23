@@ -6,52 +6,80 @@ body {
   padding: 20px;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 h1 {
   color: #1a73e8;
   font-size: 28px;
-}
-
-h2 {
-  font-size: 24px;
-  color: #333;
-  margin-top: 30px;
-  scroll-margin-top: 80px; /* Hindrer at overskriftene klippes av */
 }
 
 p {
   font-size: 18px;
 }
 
-/* Navigasjonslenker */
+/* Navigasjon */
 .nav-links {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 20px;
+}
+
+.nav-links li {
+  display: inline;
 }
 
 .nav-links a {
   text-decoration: none;
+  font-size: 18px;
   font-weight: bold;
-  color: #1a73e8;
+  color: #007bff;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Kategori-seksjon */
-.kategori-seksjon {
-  margin-top: 50px;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  width: 60%;
+/* Kategorier */
+.category {
+  margin-top: 40px;
 }
+
+.category h2 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category li {
+  margin: 10px 0;
+}
+
+.category a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.category a:hover {
+  text-decoration: underline;
+}
+
 
 
 
